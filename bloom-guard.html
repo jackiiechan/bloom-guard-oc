@@ -14,13 +14,13 @@
   }
   *{box-sizing:border-box}
   html,body{margin:0;padding:0}
-  body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased}
+  body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--fg);background:linear-gradient(160deg,#dcefe0,#bfe3cb 55%,#d6ecdc);-webkit-font-smoothing:antialiased}
   img{display:block}
   a{color:inherit;text-decoration:none}
   button{font-family:inherit;cursor:pointer;border:none}
-  .wrap{max-width:480px;margin:0 auto;min-height:100vh;position:relative}
+  .wrap{max-width:500px;margin:0 auto;min-height:100vh;position:relative;box-shadow:0 0 70px rgba(12,40,22,.28);overflow:hidden}
   .leaf-bg{position:absolute;inset:0;background-size:cover;background-position:center;}
-  .leaf-bg::after{content:"";position:absolute;inset:0;background:rgba(246,248,246,.72);backdrop-filter:blur(2px)}
+  .leaf-bg::after{content:"";position:absolute;inset:0;background:rgba(247,250,248,.84);backdrop-filter:blur(2px)}
   .content{position:relative;padding:0 20px 32px}
   .back{display:inline-block;font-size:13px;color:var(--muted);margin:18px 0 4px}
   .back:hover{color:var(--fg)}
@@ -141,6 +141,8 @@ const el=(html)=>{const t=document.createElement("template");t.innerHTML=html.tr
 function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
 const app=$("#app");
 const bg=`style="background-image:url('${IMG.bg}')"`;
+// Cosmetic only: fill the full viewport behind the app with the leafy backdrop.
+document.body.style.background=`linear-gradient(rgba(244,250,245,.55),rgba(238,247,241,.6)), url('${IMG.bg}') center/cover fixed`;
 
 /* ---------- router ---------- */
 function parseHash(){
