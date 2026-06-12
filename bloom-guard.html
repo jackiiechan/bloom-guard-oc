@@ -42,6 +42,8 @@
   .muted{color:var(--muted)}
   .center{text-align:center}
   /* home */
+  .brand{font-size:40px;line-height:1.1;font-weight:800;color:var(--emerald-d);text-align:center;margin:0;padding-top:8px}
+  .brand-heart{color:#e11d48;font-size:0.95em;vertical-align:-0.05em}
   .warn{font-size:28px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--danger);margin:10px 0}
   .lede{font-size:16px;font-weight:600;line-height:1.4}
   .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:260px;margin:0 auto}
@@ -172,6 +174,7 @@ function viewHome(){
   const leaf=el(`<div class="leaf-bg" ${bg}></div>`);
   const c=el(`<div class="content"></div>`);
   c.appendChild(el(`<section class="center" style="padding-top:24px">
+      <h1 class="brand">I <span class="brand-heart">❤️</span> Nature</h1>
       <p class="warn">Warning!</p>
       <h1 class="lede">Gardeners are spraying plants in our communities to keep the weeds away, but they contain toxic chemicals getting residents sick, and they are passing away. What are we going to do about this?</h1>
     </section>`));
